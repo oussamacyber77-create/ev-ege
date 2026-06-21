@@ -1,11 +1,11 @@
-// بيانات الموقع المشتركة — مستخرجة من hamah.sa
+﻿// بيانات الموقع المشتركة — مستخرجة من hamah.sa
 
 export const siteContact = {
   email: "system@evico.sa",
   phone: "0559616299",
   phoneHref: "tel:+966559616299",
   city: "الرياض",
-  address: "طريق الملك عبدالعزيز ٧٢٦٠ — حي الربيع، الرياض ١٣٣١٥",
+  address: "طريق الملك عبدالعزيز 7260 — حي الربيع، الرياض 13315",
   linkedin: "https://www.linkedin.com/company/evico-sa/",
   instagram: "https://www.instagram.com/evico.sa",
   x: "https://x.com/evico_sa",
@@ -143,8 +143,11 @@ export type Work = {
   challenge: string
   solution: string
   result: string
+  images?: string[]
+  deliverables?: string[]
 }
 
+// ملاحظة: البيانات الآن في Supabase — راجع lib/works.ts للاستعلام
 export const works: Work[] = [
   {
     slug: "tarhal-the-big-show",
@@ -152,7 +155,7 @@ export const works: Work[] = [
     title: "ترحال: العرض الأضخم",
     service: "التحويل و الأداء",
     sector: "القطاع الحكومي",
-    year: "٢٠٢٥",
+    year: "2025",
     img: "/work/tarhal.png",
     description:
       "استراتيجية أداء لتحويل العرض المسرحي \"ترحال\" إلى وجهة ثقافية رئيسية، عبر خلق دافع زيارة مباشر يركز على ضخامة الحدث.",
@@ -166,7 +169,7 @@ export const works: Work[] = [
     title: "بلاغك يمنع مخاطر",
     service: "الإبداع",
     sector: "القطاع الحكومي",
-    year: "٢٠٢٥",
+    year: "2025",
     img: "/work/balagh.png",
     description:
       "حملة توعوية لتحفيز الإبلاغ عن التخزين غير المرخص داخل الأحياء السكنية عبر تطبيق «بلدي»، لرفع مستوى الامتثال وسلامة المدن.",
@@ -180,7 +183,7 @@ export const works: Work[] = [
     title: "صفر بودرة",
     service: "الإبداع",
     sector: "الأغذية والمشروبات",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/sifr.png",
     description:
       "إعادة تموضع لحليب نادك طويل الأجل عبر تصميم ملصق يبرز القيمة التنافسية \"صفر بودرة\" بشكل مباشر ومكثف.",
@@ -194,7 +197,7 @@ export const works: Work[] = [
     title: "موسم حصادها",
     service: "الإبداع",
     sector: "القطاع الحكومي",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/mawsim.png",
     description: "حملة ترويجية لزيادة الوعي بالمحاصيل الزراعية المحلية في موسم حصادها وإبراز قيمتها الغذائية.",
     challenge: "",
@@ -207,7 +210,7 @@ export const works: Work[] = [
     title: "ظلك معك",
     service: "التحويل و الأداء",
     sector: "التقنية والتجارة الإلكترونية",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/dhalak.png",
     description:
       "حملة أداء وتحويل استثمرت حرارة الصيف لتقديم تظليل السيارات كحل يرافق السائق، لتجاوز عناء البحث عن المواقف المظللة.",
@@ -222,7 +225,7 @@ export const works: Work[] = [
     title: "حيّة بالقصص",
     service: "الإبداع",
     sector: "الوجهات والأماكن",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/hayya.png",
     description: "حملة للترويج للتجارب العائلية في حي الطريف التاريخي من خلال إحياء القصص التراثية.",
     challenge: "",
@@ -235,7 +238,7 @@ export const works: Work[] = [
     title: "مفصل صح",
     service: "الإبداع",
     sector: "التقنية والتجارة الإلكترونية",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/mfassal.png",
     description:
       "حملة ترويجية لتطبيق ثوبي بمشاركة ياسر القحطاني، لربط دقة تفصيل الثوب باهتمامات الجمهور الرياضية.",
@@ -249,7 +252,7 @@ export const works: Work[] = [
     title: "أَدرِك",
     service: "الإبداع",
     sector: "القطاع غير الربحي",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/adrik.png",
     description:
       "حملة تبرعات رمضانية تركز على الأثر العائد على المتبرع نفسه، لخلق دافع شخصي ومباشر للتبرع.",
@@ -263,7 +266,7 @@ export const works: Work[] = [
     title: "مايبيله كلام",
     service: "الإبداع",
     sector: "الأغذية والمشروبات",
-    year: "٢٠٢٣",
+    year: "2023",
     img: "/work/maybeelah.png",
     description:
       "حملة لترويج عرض تجاري استثنائي لدخون بصياغة تعتمد على الصمت، للتأكيد على أن العرض يتحدث عن نفسه.",
@@ -303,7 +306,7 @@ export const works: Work[] = [
     title: "قهوة توديك كورشفيل",
     service: "الإبداع",
     sector: "الأغذية والمشروبات",
-    year: "٢٠٢٤",
+    year: "2024",
     img: "/work/qahwa.png",
     description: "حملة تربط تجربة القهوة بأجواء السفر والفخامة.",
     challenge: "",
@@ -316,12 +319,14 @@ export const works: Work[] = [
     title: "امانة الرياض",
     service: "عرض تقديمي",
     sector: "القطاع الحكومي",
-    year: "٢٠٢٥",
+    year: "2025",
     img: "/placeholder.jpg",
     description: "عرض تقديمي احترافي يجمع بين الهوية البصرية المميزة والسرد البصري الإبداعي.",
     challenge: "",
     solution: "",
     result: "",
+    images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
+    deliverables: ["هوية بصرية", "تصميم عرض", "سرد بصري"],
   },
   {
     slug: "power",
@@ -329,12 +334,14 @@ export const works: Work[] = [
     title: "باور",
     service: "تطبيق جوال",
     sector: "التقنية والتجارة الإلكترونية",
-    year: "٢٠٢٥",
+    year: "2025",
     img: "/placeholder.jpg",
     description: "تطبيق جوال بتجربة مستخدم سلسة وتصميم عصري يعكس قوة العلامة.",
     challenge: "",
     solution: "",
     result: "",
+    images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
+    deliverables: ["تصميم واجهات", "تجربة مستخدم", "هوية بصرية"],
   },
   {
     slug: "tu",
@@ -342,12 +349,14 @@ export const works: Work[] = [
     title: "تي يو",
     service: "منصة رقمية",
     sector: "التعليم",
-    year: "٢٠٢٥",
+    year: "2025",
     img: "/placeholder.jpg",
     description: "منصة تعليمية متكاملة تقدم تجربة تعلم تفاعلية تجمع بين المحتوى الأكاديمي المتميز والتصميم البصري الجذاب. صممت هوية المنصة وواجهات الاستخدام لتكون سلسة وملهمة للمتعلمين من جميع الفئات.",
     challenge: "",
     solution: "",
     result: "",
+    images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
+    deliverables: ["هوية بصرية", "تصميم واجهات", "منصة رقمية"],
   },
 ]
 
@@ -366,24 +375,24 @@ export const articles: Article[] = [
   {
     slug: "offers-and-promotions-report",
     category: "STRATEGY",
-    date: "أبريل ٢٠٢٦",
-    fullDate: "أبريل ٢٠٢٦",
-    title: "تقرير: اقتصاد التخفيضات والعروض - ماهو العرض الأفضل \"خصم ٥٠٪\" أو \"اشتر واحدة والثانية مجانًا\"؟",
+    date: "أبريل 2026",
+    fullDate: "أبريل 2026",
+    title: "تقرير: اقتصاد التخفيضات والعروض - ماهو العرض الأفضل \"خصم 50٪\" أو \"اشتر واحدة والثانية مجانًا\"؟",
     excerpt:
       "نظرة معمّقة على سيكولوجية العروض الترويجية وكيف يدرك المستهلك القيمة، ولماذا قد يتفوق عرض على آخر رغم تساويهما حسابياً.",
     img: "/news/offers-report.png",
     body: [
       "تُعدّ العروض الترويجية من أقوى أدوات التسويق، لكن فعاليتها لا تتحدد بالقيمة الحسابية وحدها، بل بالطريقة التي يدرك بها المستهلك تلك القيمة.",
-      "عند المقارنة بين عرض \"خصم ٥٠٪\" وعرض \"اشترِ واحدة واحصل على الثانية مجاناً\"، نجد أن العرضين قد يبدوان متكافئين حسابياً في حالات معينة، إلا أن إدراك المستهلك لهما يختلف جذرياً.",
-      "عرض \"اشترِ واحدة والثانية مجاناً\" يميل لتحقيق شعور أقوى بالمكسب لأن كلمة \"مجاناً\" تحمل وزناً نفسياً كبيراً، بينما يركّز \"خصم ٥٠٪\" على توفير المال أكثر من الحصول على شيء إضافي.",
+      "عند المقارنة بين عرض \"خصم 50٪\" وعرض \"اشترِ واحدة واحصل على الثانية مجاناً\"، نجد أن العرضين قد يبدوان متكافئين حسابياً في حالات معينة، إلا أن إدراك المستهلك لهما يختلف جذرياً.",
+      "عرض \"اشترِ واحدة والثانية مجاناً\" يميل لتحقيق شعور أقوى بالمكسب لأن كلمة \"مجاناً\" تحمل وزناً نفسياً كبيراً، بينما يركّز \"خصم 50٪\" على توفير المال أكثر من الحصول على شيء إضافي.",
       "الخلاصة أن اختيار العرض الأنسب يعتمد على هدف الحملة: زيادة حجم السلة، أو تصريف المخزون، أو رفع تكرار الشراء — ولكل هدف صيغة عرض تخدمه بشكل أفضل من غيرها.",
     ],
   },
   {
     slug: "hamah-joins-one-group",
     category: "MARKETING",
-    date: "يوليو ٢٠٢٥",
-    fullDate: "٢٤ يوليو ٢٠٢٥",
+    date: "يوليو 2025",
+    fullDate: "24 يوليو 2025",
     title: "\"هامة\" تنضم إلى مجموعة \"ون\" للاتصال والتسويق لتعزيز الحلول التسويقية المدعومة بالذكاء الاصطناعي",
     excerpt: "في خطوة استراتيجية توسعية، أعلنت مجموعة \"ون\" عن انضمام شركة \"هامة\" إلى منظومتها لتعزيز الحلول المدعومة بالذكاء الاصطناعي.",
     img: "/news/one-group.png",
@@ -397,49 +406,9 @@ export const articles: Article[] = [
   },
 ]
 
-export type FeaturedWork = {
-  slug: string
-  type: string
-  client: string
-  sector: string
-  description: string
-  deliverables: string[]
-  images: string[]
-}
-
-export const featuredWorks: FeaturedWork[] = [
-  {
-    slug: "amanat-riyadh",
-    type: "عرض تقديمي",
-    client: "امانة الرياض",
-    sector: "القطاع الحكومي",
-    description: "عرض تقديمي احترافي يجمع بين الهوية البصرية المميزة والسرد البصري الإبداعي.",
-    deliverables: ["هوية بصرية", "تصميم عرض", "سرد بصري"],
-    images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
-  },
-  {
-    slug: "power",
-    type: "تطبيق جوال",
-    client: "باور",
-    sector: "التقنية والتجارة الإلكترونية",
-    description: "تطبيق جوال بتجربة مستخدم سلسة وتصميم عصري يعكس قوة العلامة.",
-    deliverables: ["تصميم واجهات", "تجربة مستخدم", "هوية بصرية"],
-    images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
-  },
-  {
-    slug: "tu",
-    type: "منصة رقمية",
-    client: "تي يو",
-    sector: "التعليم",
-    description: "منصة تعليمية متكاملة تقدم تجربة تعلم تفاعلية تجمع بين المحتوى الأكاديمي المتميز والتصميم البصري الجذاب. صممت هوية المنصة وواجهات الاستخدام لتكون سلسة وملهمة للمتعلمين من جميع الفئات.",
-    deliverables: ["هوية بصرية", "تصميم واجهات", "منصة رقمية"],
-    images: ["/placeholder.jpg", "/placeholder.jpg", "/placeholder.jpg"],
-  },
-]
-
 export const stats = [
-  { value: "+٩", label: "سنوات خبرة" },
-  { value: "+١٥٠", label: "مشروع منجز" },
-  { value: "+١٠٠", label: "علامة تجارية" },
-  { value: "٢", label: "مكتب" },
+  { value: "+9", label: "سنوات خبرة" },
+  { value: "+150", label: "مشروع منجز" },
+  { value: "+100", label: "علامة تجارية" },
+  { value: "2", label: "مكتب" },
 ]

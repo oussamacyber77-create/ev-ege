@@ -10,7 +10,7 @@ import { NewsSection } from "@/components/news-section"
 import { CtaSection } from "@/components/cta-section"
 import { SiteFooter } from "@/components/site-footer"
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <SiteHeader />

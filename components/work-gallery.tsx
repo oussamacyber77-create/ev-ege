@@ -4,7 +4,18 @@ import { useState, useMemo } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Reveal } from "@/components/reveal"
-import { works } from "@/lib/site-data"
+
+export type WorkBrief = {
+  slug: string
+  client: string
+  title: string
+  service: string
+  sector: string
+  year: string
+  img: string
+  banner: string
+  images: { url: string }[]
+}
 
 const serviceFilters = ["الكل", "الإبداع", "الإنتاج السينمائي", "التحويل و الأداء"]
 const sectorFilters = [
@@ -16,7 +27,7 @@ const sectorFilters = [
   "القطاع غير الربحي",
 ]
 
-export function WorkGallery() {
+export function WorkGallery({ works }: { works: WorkBrief[] }) {
   const [service, setService] = useState("الكل")
   const [sector, setSector] = useState("الكل")
 
@@ -25,7 +36,7 @@ export function WorkGallery() {
       works.filter(
         (w) => (service === "الكل" || w.service === service) && (sector === "الكل" || w.sector === sector),
       ),
-    [service, sector],
+    [service, sector, works],
   )
 
   return (
@@ -75,7 +86,7 @@ export function WorkGallery() {
             <Link href={`/work/${w.slug}`} className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border">
                 <Image
-                  src={w.img || "/placeholder.svg"}
+                  src={w.banner || w.images?.[0]?.url || w.img || "/placeholder.svg"}
                   alt={w.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

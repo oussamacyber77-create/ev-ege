@@ -3,7 +3,8 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Reveal } from "@/components/reveal"
-import { solutions, works } from "@/lib/site-data"
+import { solutions } from "@/lib/site-data"
+import { getWorksPublic } from "@/lib/works"
 import { ArrowLeft, Check } from "lucide-react"
 
 export function generateStaticParams() {
@@ -22,7 +23,8 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
   const solution = solutions.find((s) => s.slug === slug)
   if (!solution) notFound()
 
-  const related = works.filter((w) => w.sector === solution.title).slice(0, 3)
+  const allWorks = await getWorksPublic()
+  const related = allWorks.filter((w) => w.sector === solution.title).slice(0, 3)
 
   return (
     <>

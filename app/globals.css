@@ -4,9 +4,73 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Arabic';
+  src: url('/fonts/GraphikArabic-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
-  --font-heading: var(--font-tajawal), var(--font-sans);
-  --font-sans: var(--font-tajawal), var(--font-geist-sans), 'Geist Fallback';
+  --font-heading: 'Graphik Arabic', var(--font-sans);
+  --font-sans: 'Graphik Arabic', var(--font-geist-sans), 'Geist Fallback';
   --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
