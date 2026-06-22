@@ -1,6 +1,11 @@
+import type { Metadata } from "next"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { supabase } from "@/lib/supabase-server"
+
+export const metadata: Metadata = {
+  icons: { icon: "/favicon-admin.svg" },
+}
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies()

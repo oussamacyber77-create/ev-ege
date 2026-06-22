@@ -105,7 +105,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
     })
 
     if (res.ok) {
-      router.push("/admin/works")
+      router.push("/admin")
       router.refresh()
     } else {
       const json = await res.json()
@@ -117,7 +117,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
   return (
     <form onSubmit={handleSubmit} className="mt-6 space-y-6">
       {error && (
-        <div className="rounded-xl border border-red-400/30 bg-red-400/10 px-5 py-3 text-sm text-red-400">
+        <div className="rounded-md border border-red-400/30 bg-red-400/10 px-5 py-3 text-sm text-red-400">
           {error}
         </div>
       )}
@@ -128,7 +128,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
             type="text"
             value={data.slug}
             onChange={(e) => setData((p) => ({ ...p, slug: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             required
             disabled={isEdit}
           />
@@ -139,7 +139,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
             type="text"
             value={data.client}
             onChange={(e) => setData((p) => ({ ...p, client: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             required
           />
         </FormField>
@@ -149,7 +149,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
             type="text"
             value={data.title}
             onChange={(e) => setData((p) => ({ ...p, title: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             required
           />
         </FormField>
@@ -159,7 +159,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
             type="text"
             value={data.service}
             onChange={(e) => setData((p) => ({ ...p, service: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             required
           />
         </FormField>
@@ -169,7 +169,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
             type="text"
             value={data.sector}
             onChange={(e) => setData((p) => ({ ...p, sector: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             required
           />
         </FormField>
@@ -179,7 +179,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
             type="text"
             value={data.year}
             onChange={(e) => setData((p) => ({ ...p, year: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
           />
         </FormField>
       </div>
@@ -188,7 +188,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
         <textarea
           value={data.description}
           onChange={(e) => setData((p) => ({ ...p, description: e.target.value }))}
-          className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+          className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
           rows={4}
           required
         />
@@ -199,7 +199,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
           <textarea
             value={data.challenge}
             onChange={(e) => setData((p) => ({ ...p, challenge: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             rows={3}
           />
         </FormField>
@@ -208,7 +208,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
           <textarea
             value={data.solution}
             onChange={(e) => setData((p) => ({ ...p, solution: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             rows={3}
           />
         </FormField>
@@ -217,7 +217,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
           <textarea
             value={data.result}
             onChange={(e) => setData((p) => ({ ...p, result: e.target.value }))}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
+            className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground outline-none focus:border-primary"
             rows={3}
           />
         </FormField>
@@ -228,7 +228,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
         <p className="mt-1 text-xs text-muted-foreground">اختر صورة البنر (الغلاف) بالضغط على أيقونة التاج</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-4">
           {data.images.map((url, i) => (
-            <div key={i} className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
+            <div key={i} className="group relative aspect-[4/3] overflow-hidden rounded-md border border-border">
               <img src={url} alt="" className="h-full w-full object-cover" />
               {data.banner === url && (
                 <div className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold text-primary-foreground shadow-lg">
@@ -241,7 +241,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
                   <button
                     type="button"
                     onClick={() => setData((p) => ({ ...p, banner: url }))}
-                    className="flex items-center gap-1 rounded-lg bg-primary px-3 py-1.5 text-[10px] font-bold text-primary-foreground transition-opacity hover:opacity-90"
+                    className="flex items-center gap-1 rounded-md bg-primary px-3 py-1.5 text-[10px] font-semibold text-primary-foreground transition-opacity hover:opacity-90"
                   >
                     <Crown size={11} />
                     تعيين كبنر
@@ -257,7 +257,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
                       banner: p.banner === url ? (removed[0] || "") : p.banner,
                     }))
                   }}
-                  className="flex items-center gap-1 rounded-lg bg-red-500/80 px-3 py-1.5 text-[10px] font-bold text-white transition-opacity hover:opacity-90"
+                  className="flex items-center gap-1 rounded-md bg-red-500/80 px-3 py-1.5 text-[10px] font-semibold text-white transition-opacity hover:opacity-90"
                 >
                   <X size={11} />
                   حذف
@@ -265,7 +265,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
               </div>
             </div>
           ))}
-          <label className="flex aspect-[4/3] cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-border transition-colors hover:border-primary">
+          <label className="flex aspect-[4/3] cursor-pointer items-center justify-center rounded-md border-2 border-dashed border-border transition-colors hover:border-primary">
             {uploading ? (
               <span className="text-sm text-muted-foreground">جاري الرفع...</span>
             ) : (
@@ -291,14 +291,14 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
           <button
             type="button"
             onClick={addDeliverable}
-            className="text-xs font-bold text-primary hover:underline"
+            className="text-xs font-semibold text-primary hover:underline"
           >
             + إضافة
           </button>
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {data.deliverables.map((d, i) => (
-            <div key={i} className="flex items-center gap-2 rounded-full border border-border px-4 py-2">
+            <div key={i} className="flex items-center gap-2 rounded-md border border-border px-4 py-2">
               <input
                 type="text"
                 value={d}
@@ -337,7 +337,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
       <button
         type="submit"
         disabled={saving}
-        className="rounded-xl bg-primary px-8 py-3 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="rounded-md bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
       >
         {saving ? "جاري الحفظ..." : isEdit ? "حفظ التعديلات" : "إضافة العمل"}
       </button>

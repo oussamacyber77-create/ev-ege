@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic"
 export default async function AdminDashboardPage() {
   const { data: works } = await supabase
     .from("works")
-    .select("id, slug, client, title, service, sector, year, hidden, featured, banner")
+    .select("id, slug, client, title, service, sector, year, hidden, featured, banner, updated_at, created_at")
     .order("created_at", { ascending: false })
 
   const worksWithImages = await Promise.all(

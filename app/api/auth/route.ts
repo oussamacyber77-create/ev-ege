@@ -57,7 +57,10 @@ export async function DELETE() {
   }
 
   const response = NextResponse.json({ success: true })
-  response.cookies.delete("admin_token")
+  response.headers.set(
+    "Set-Cookie",
+    "admin_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=Lax"
+  )
 
   return response
 }
