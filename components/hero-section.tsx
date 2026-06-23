@@ -1,6 +1,16 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "motion/react"
+
+const clientLogos = [
+  { name: "clup", file: "clup.svg" },
+  { name: "Furious", file: "furious.svg" },
+  { name: "powr", file: "powr.svg" },
+  { name: "riyadh", file: "riyadh.svg" },
+  { name: "senam", file: "senam.svg" },
+  { name: "tu", file: "tu.svg" },
+]
 
 export function HeroSection() {
   return (
@@ -61,6 +71,27 @@ export function HeroSection() {
           الذكاء الاصطناعي و GenAI.
         </motion.p>
 
+        <div
+          className="relative w-full overflow-hidden pb-6"
+          dir="ltr"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          }}
+        >
+          <div className="flex w-max animate-marquee-ltr items-center gap-14 px-8">
+            {[...clientLogos, ...clientLogos].map((client, i) => (
+              <div key={`${client.name}-${i}`} className="relative h-10 w-28 shrink-0">
+                <Image
+                  src={`/hero-clients/${client.file}`}
+                  alt={client.name}
+                  fill
+                  sizes="112px"
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
     </section>

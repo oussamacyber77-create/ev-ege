@@ -224,6 +224,19 @@
   animation: marquee 40s linear infinite;
 }
 
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 30s linear infinite;
+}
+
 .animate-ping-slow {
   animation: ping-slow 2.5s ease-out infinite;
 }
