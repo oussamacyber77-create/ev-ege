@@ -29,7 +29,7 @@ export async function WorkSection() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           {works.map((w, i) => (
-            <Reveal as="div" delay={i % 2} key={w.title}>
+            <Reveal as="div" delay={i % 2} key={w.slug}>
               <Link href={`/work/${w.slug}`} className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border">
                   <Image
