@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js"
+import type { Showcase } from "./showcase-types"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -20,6 +21,7 @@ export type WorkRow = {
   hidden: boolean
   featured: boolean
   banner: string
+  showcase: Showcase | null
   created_at: string
   updated_at: string
 }

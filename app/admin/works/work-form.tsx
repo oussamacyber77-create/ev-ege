@@ -2,7 +2,10 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { ImagePlus, X, Crown } from "lucide-react"
+import { ImagePlus, X, Crown, FileText, Image } from "lucide-react"
+import type { Showcase } from "@/lib/showcase-types"
+import { EMPTY_SHOWCASE } from "@/lib/showcase-types"
+import { ShowcaseEditor } from "@/components/showcase/showcase-editor"
 
 type WorkData = {
   slug: string
@@ -20,11 +23,13 @@ type WorkData = {
   images: string[]
   banner: string
   deliverables: string[]
+  showcase: Showcase | null
 }
 
 export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
   const router = useRouter()
   const isEdit = !!initialData?.slug
+  const [tab, setTab] = useState<"info" | "showcase">("info")
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
   const [data, setData] = useState<WorkData>({
@@ -43,6 +48,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
     images: initialData?.images || [],
     banner: initialData?.banner || "",
     deliverables: initialData?.deliverables || [],
+    showcase: initialData?.showcase || null,
   })
 
   const [uploading, setUploading] = useState(false)
@@ -93,6 +99,7 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
     const body = {
       ...data,
       deliverables: data.deliverables.filter(Boolean),
+      showcase: data.showcase || null,
     }
 
     const method = isEdit ? "PATCH" : "POST"
@@ -122,6 +129,35 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
         </div>
       )}
 
+      <div className="flex gap-1 border-b border-slate-700/50">
+        <button
+          type="button"
+          onClick={() => setTab("info")}
+          className={`flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-semibold transition-all ${
+            tab === "info"
+              ? "border-primary text-foreground"
+              : "border-transparent text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <FileText size={15} />
+          معلومات العمل
+        </button>
+        <button
+          type="button"
+          onClick={() => setTab("showcase")}
+          className={`flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-semibold transition-all ${
+            tab === "showcase"
+              ? "border-primary text-foreground"
+              : "border-transparent text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <Image size={15} />
+          ملف العرض
+        </button>
+      </div>
+
+      {tab === "info" && (
+        <>
       <div className="grid gap-5 sm:grid-cols-2">
         <FormField label="الاسم (Slug)" hint="مثل: amana-riyadh" dir="ltr">
           <input
@@ -333,11 +369,22 @@ export function WorkForm({ initialData }: { initialData?: Partial<WorkData> }) {
           مخفي
         </label>
       </div>
+      </>
+      )}
+
+      {tab === "showcase" && (
+        <div className="mt-6">
+          <ShowcaseEditor
+            showcase={data.showcase || EMPTY_SHOWCASE}
+            onChange={(showcase) => setData((p) => ({ ...p, showcase }))}
+          />
+        </div>
+      )}
 
       <button
         type="submit"
         disabled={saving}
-        className="rounded-md bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="mt-6 rounded-md bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
       >
         {saving ? "جاري الحفظ..." : isEdit ? "حفظ التعديلات" : "إضافة العمل"}
       </button>

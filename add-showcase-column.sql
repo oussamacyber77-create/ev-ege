@@ -1,0 +1,1 @@
+ALTER TABLE works ADD COLUMN IF NOT EXISTS showcase jsonb;

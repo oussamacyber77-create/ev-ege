@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Reveal } from "@/components/reveal"
 import { BackLink } from "@/components/back-link"
+import { ShowcaseTrigger } from "@/components/showcase/showcase-viewer"
 import { getWorkBySlug, getWorksPublic } from "@/lib/works"
 import { supabase } from "@/lib/supabase-server"
 
@@ -64,6 +65,8 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
               {work.year && <span>{work.year}</span>}
             </div>
           </div>
+
+          {work.showcase && <ShowcaseTrigger showcase={work.showcase} />}
 
           <div className="mt-16">
             <Reveal as="div">

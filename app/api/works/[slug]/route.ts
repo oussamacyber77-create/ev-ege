@@ -17,7 +17,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ sl
   }
 
   const updateData: Record<string, unknown> = {}
-  const fields = ["slug", "client", "title", "service", "sector", "year", "description", "challenge", "solution", "result", "hidden", "featured", "banner"]
+  const fields = ["slug", "client", "title", "service", "sector", "year", "description", "challenge", "solution", "result", "hidden", "featured", "banner", "showcase"]
   for (const field of fields) {
     if (body[field] !== undefined) updateData[field] = body[field]
   }

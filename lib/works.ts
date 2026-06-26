@@ -1,6 +1,6 @@
 import { supabase, type WorkWithRelations } from "./supabase-server"
 
-const WORK_COLUMNS = "id, slug, client, title, service, sector, year, description, challenge, solution, result, hidden, featured, banner, created_at, updated_at"
+const WORK_COLUMNS = "id, slug, client, title, service, sector, year, description, challenge, solution, result, hidden, featured, banner, showcase, created_at, updated_at"
 const IMAGE_COLUMNS = "id, work_id, url, sort_order"
 const DELIVERABLE_COLUMNS = "id, work_id, name, sort_order"
 

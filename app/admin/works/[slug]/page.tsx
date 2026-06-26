@@ -55,6 +55,7 @@ export default async function EditWorkPage({ params }: { params: Promise<{ slug:
             images: images?.map((i) => i.url) || [],
             banner: work.banner || images?.[0]?.url || "",
             deliverables: deliverables?.map((d) => d.name) || [],
+            showcase: work.showcase,
           }}
         />
       </div>

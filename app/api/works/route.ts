@@ -30,6 +30,7 @@ export async function POST(request: Request) {
       hidden: body.hidden || false,
       featured: body.featured || false,
       banner: body.banner || body.images?.[0] || "",
+      showcase: body.showcase || null,
     })
     .select()
     .single()
