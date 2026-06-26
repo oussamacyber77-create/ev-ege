@@ -31,7 +31,7 @@ export async function getWorksPublic(): Promise<WorkWithRelations[]> {
 }
 
 export async function getWorkBySlug(slug: string): Promise<WorkWithRelations | null> {
-  const select = `id, slug, client, title, service, sector, year, description, challenge, solution, result, hidden, featured, banner, created_at, updated_at, images:work_images(${IMAGE_COLUMNS}), deliverables:work_deliverables(${DELIVERABLE_COLUMNS})`
+  const select = `${WORK_COLUMNS}, images:work_images(${IMAGE_COLUMNS}), deliverables:work_deliverables(${DELIVERABLE_COLUMNS})`
 
   const { data } = await supabase
     .from("works")
